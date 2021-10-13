@@ -1,9 +1,12 @@
 %% \iffalse meta-comment
 %
 % cutwin.dtx
-% Author: Peter Wilson, Herries Press (herries dot press at earthlink dot net)
+% Author: Peter Wilson, Herries Press
 %         and Alan Hoenig
 % Copyright 2010 Peter R. Wilson
+%
+% Current Maintainer David Carlisle
+% Copyright 2021 Peter R. Wilson, david Carlisle
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -14,7 +17,7 @@
 % and version 1.3 or later is part of all distributions of
 % LaTeX version 2003/06/01 or later.
 %
-% This work has the LPPL maintenance status "author-maintained".
+% This work has the LPPL maintenance status "maintained".
 %
 % This work consists of the files listed in the README file.
 %
@@ -47,14 +50,13 @@
 %
 % \fi
 %
-% \CheckSum{720}
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
 % \DoNotIndex{\@dotsep,\@empty,\@float,\@gobble,\@gobbletwo,\@ignoretrue}
 % \DoNotIndex{\@input,\@ixpt,\@m}
 % \DoNotIndex{\@minus,\@mkboth,\@ne,\@nil,\@nomath,\@plus,\@set@topoint}
-% \DoNotIndex{\@tempboxa,\@tempcnta,\@tempdima,\@tempdimb}
+% \DoNotIndex{\@tempboxa,\@tempcnta,\@tempdima,\c@twdima}
 % \DoNotIndex{\@tempswafalse,\@tempswatrue,\@viipt,\@viiipt,\@vipt}
 % \DoNotIndex{\@vpt,\@warning,\@xiipt,\@xipt,\@xivpt,\@xpt,\@xviipt}
 % \DoNotIndex{\@xxpt,\@xxvpt,\\,\ ,\addpenalty,\addtolength,\addvspace}
@@ -91,9 +93,10 @@
 % \DoNotIndex{\wd,\xiipt,\year,\z@}
 %
 % \changes{v0.1}{2010/09/29}{First public release}
+% \changes{v0.2}{2021/10/13}{Declare registers}
 %
 % \def\dtxfile{cutwin.dtx}
-% \def\fileversion{v0.1} \def\filedate{2010/09/29}
+% \def\fileversion{v0.2} \def\filedate{2021/10/13}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
@@ -333,8 +336,7 @@
 %    \begin{macrocode}
 %<*pkg>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{cutwin}[2010/09/29 v0.1 cutout windows]
-
+\ProvidesPackage{cutwin}[2021/10/13 v0.2 cutout windows]
 %    \end{macrocode}
 %
 %
@@ -396,12 +398,21 @@
 \newbox\c@twfinaltext  % final assembled cutout paragraph
 \newbox\c@twslicea     % slice A of window text
 \newbox\c@twsliceb     % slice B of window text
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{\c@twdima}
+% \begin{macro}{\c@twdimb}
+% And some lengths.
+%    \begin{macrocode}
+\newdimen\c@twdima    % formally \@tempdimb
+\newdimen\c@twdimb    % formally \@tempdimc
+%    \end{macrocode}
 % \end{macro}
 % \end{macro}
 %
@@ -458,23 +469,23 @@
 % stuff (\cs{windowpagestuff}) in a cutout window.
 %    \begin{macrocode}
 \newcommand*{\pageinwindow}{%
-  \@tempdimc=\c@twwinlines\baselineskip % cutout height
-  \@tempdimb=\hsize
+  \c@twdimb=\c@twwinlines\baselineskip % cutout height
+  \c@twdima=\hsize
   \ifnum\c@twl@c=\m@ne % openleft
-    \advance\@tempdimb -\c@twrtside
+    \advance\c@twdima -\c@twrtside
   \else
     \ifnum\c@twl@c=\@ne % openright
-      \advance\@tempdimb -\c@twlftside
+      \advance\c@twdima -\c@twlftside
     \else% center
-      \advance\@tempdimb - \c@twlftside
-      \advance\@tempdimb - \c@twrtside
+      \advance\c@twdima - \c@twlftside
+      \advance\c@twdima - \c@twrtside
     \fi
   \fi
   \begin{picture}(0,0)%
     \put(0,0){%
       \raisebox{4pt}{%
 %\fbox{%
-        \begin{minipage}[t][\@tempdimc][c]{\@tempdimb}
+        \begin{minipage}[t][\c@twdimb][c]{\c@twdima}
           \windowpagestuff
         \end{minipage}
 %}% end fbox
