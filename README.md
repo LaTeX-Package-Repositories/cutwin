@@ -1,18 +1,24 @@
-    The cutwin package enables you to create a window in a paragraph.
+# The cutwin package
+
+The cutwin package enables you to create a window in a paragraph.
 Facilities are provided to assist in putting text or a logo into the
 space cutout.
 
-    IF THERE ARE ANY QUESTIONS PLEASE ASK THEM ON THE COMP.TEXT.TEX NEWSGROUP
-AS I AM AWAY MORE OFTEN THAN NOT.
-
+https://github.com/davidcarlisle/cutwin/issues
 
 Changes in version 0.1 (2010/09/29)
 o First public release
+
+Changes in version 0.2 (2021/10/13)
+o Allocate package specific registers replacing \@tempdimb and \@tempdimc
 
 ------------------------------------------------------------------
   Author: Peter Wilson (Herries Press) herries dot press at earthlink dot net
           and Alan Hoenig
   Copyright 2010 Peter R. Wilson
+  
+  Current Maintainer David Carlisle
+  Copyright 2021 Peter R. Wilson, David Carlisle
 
   This work may be distributed and/or modified under the
   conditions of the Latex Project Public License, either
@@ -34,10 +40,12 @@ o First public release
     cutwin.sty
 
 ------------------------------------------------------------------
-     The distribution consists of the following files:
-README (this file)
-cutwin.dtx
-cutwin.ins
+
+The distribution consists of the following files:
+
+README (this file)  
+cutwin.dtx  
+cutwin.ins  
 cutwin.pdf
 
 
@@ -53,8 +61,6 @@ o (for an index run: makeindex -s gind.ist cutwin.idx)
 o run: (pdf)latex cutwin.dtx
 o Print cutwin.dvi (or cutwin.pdf) for a hardcopy of the package manual
 
-2010/09/29
-Peter Wilson
-herries dot press at earthlink dot net
+
 
  
