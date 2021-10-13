@@ -7,10 +7,12 @@ space cutout.
 https://github.com/davidcarlisle/cutwin/issues
 
 Changes in version 0.1 (2010/09/29)
-o First public release
+
+* First public release
 
 Changes in version 0.2 (2021/10/13)
-o Allocate package specific registers replacing \@tempdimb and \@tempdimc
+
+* Allocate package specific registers replacing \@tempdimb and \@tempdimc
 
 ------------------------------------------------------------------
   Author: Peter Wilson (Herries Press) herries dot press at earthlink dot net
