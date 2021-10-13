@@ -448,7 +448,7 @@
 %    \begin{macrocode}
 \newcommand*{\c@twcalcilg}{%
   \c@twvsilg=\baselineskip
-  \setbox0=\hbox{(}
+  \setbox0=\hbox{(}%
   \advance\c@twvsilg-\ht0 \advance\c@twvsilg-\dp0}
 %    \end{macrocode}
 % \end{macro}
@@ -479,9 +479,9 @@
     \put(0,0){%
       \raisebox{4pt}{%
 %\fbox{%
-        \begin{minipage}[t][\c@twdimb][c]{\c@twdima}
+        \begin{minipage}[t][\c@twdimb][c]{\c@twdima}%
           \windowpagestuff
-        \end{minipage}
+        \end{minipage}%
 %}% end fbox
       }% end raisebox
     }% end put
@@ -573,9 +573,9 @@
 % The process depends on whether the cutout is at the left, right, or center.
 %    \begin{macrocode}
   \ifnum\c@twl@c=\z@% center
-    \c@twcompctr{\c@twholdwin}{\c@twwindow}
+    \c@twcompctr{\c@twholdwin}{\c@twwindow}%
   \else% left or right
-    \c@twcomplftrt{\c@twholdwin}{\c@twwindow}
+    \c@twcomplftrt{\c@twholdwin}{\c@twwindow}%
   \fi
 %    \end{macrocode}
 % Assemble the various boxes into the final box (\cs{c@twfinaltext})
@@ -602,7 +602,7 @@
 % \cs{c@twfirst} is used as a flag for indicating the first line of a cutout.
 %    \begin{macrocode}
 \newcommand*{\c@twcompctr}[2]{%
-  \def\c@twfirst{1}
+  \def\c@twfirst{1}%
   \loop\advance\c@twwinlines\m@ne
 %    \end{macrocode}
 % Get a pair of lines and remove skips.
@@ -629,7 +629,7 @@
   \fi
 %    \end{macrocode}
 %    \begin{macrocode}
-  \def\c@twfirst{2}
+  \def\c@twfirst{2}%
   \ifnum\c@twwinlines>\z@\repeat}
 %    \end{macrocode}
 % \end{macro}
@@ -648,7 +648,7 @@
 %    \begin{macrocode}
   \setbox\c@twslicea=\vsplit#1 to\baselineskip
   \ifnum\c@twl@c=\m@ne%    open left, text at right
-    \c@twprune{\c@twslicea}{\c@twrtside}
+    \c@twprune{\c@twslicea}{\c@twrtside}%
     \ifnum\c@twfirst=\@ne
       \setbox#2=\vbox{\unvbox#2\hbox
       to\hsize{\pageinwindow\hfil\box\c@twslicea}}%
@@ -656,10 +656,10 @@
       \setbox#2=\vbox{\unvbox#2\hbox
       to\hsize{\mbox{}\hfil\box\c@twslicea}}%
     \fi
-    \def\c@twfirst{2}
+    \def\c@twfirst{2}%
   \else
     \ifnum\c@twl@c=\@ne% open right, text at left
-      \c@twprune{\c@twslicea}{\c@twlftside}
+      \c@twprune{\c@twslicea}{\c@twlftside}%
       \ifnum\c@twfirst=\@ne\relax
         \setbox#2=\vbox{\unvbox#2\hbox
         to\hsize{\box\c@twslicea\pageinwindow}}%
@@ -667,7 +667,7 @@
         \setbox#2=\vbox{\unvbox#2\hbox
         to\hsize{\box\c@twslicea}}%
       \fi
-      \def\c@twfirst{2}
+      \def\c@twfirst{2}%
     \fi
   \fi
   \ifnum\c@twwinlines>\z@\repeat}
@@ -706,7 +706,7 @@
 % If there are top lines generate a \verb?0pt \hsize? for each
 %    \begin{macrocode}
   \ifnum\c@twtoplines>\z@
-    \loop\c@twtoka=\expandafter{\the\c@twtoka 0pt \hsize}
+    \loop\c@twtoka=\expandafter{\the\c@twtoka 0pt \hsize}%
       \advance\c@twtoplines -1\relax
     \ifnum\c@twtoplines>\z@\repeat
   \fi
@@ -728,18 +728,18 @@
 %    \end{macrocode}
 % For open left generate a \verb?\c@twlftside \c@twrtside? for each.
 %    \begin{macrocode}
-      \expandafter{\the\c@twtoka \c@twlftside \c@twrtside}
+      \expandafter{\the\c@twtoka \c@twlftside \c@twrtside}%
     \else
       \ifnum\c@twl@c=\@ne % openright
 %    \end{macrocode}
 % For open right generate a \verb?\0pt c@twlftside? for each
 %    \begin{macrocode}
-        \expandafter{\the\c@twtoka 0pt \c@twlftside}
+        \expandafter{\the\c@twtoka 0pt \c@twlftside}%
       \else %center
 %    \end{macrocode}
 % For centered generate \verb?0pt \c@twlftside 0pt \c@twrtside? for each pair.
 %    \begin{macrocode}
-        \expandafter{\the\c@twtoka 0pt \c@twlftside 0pt \c@twrtside}
+        \expandafter{\the\c@twtoka 0pt \c@twlftside 0pt \c@twrtside}%
       \fi
     \fi
     \advance\c@twwinlines \m@ne
@@ -847,9 +847,9 @@
   \fi
   \setbox\c@twholdwin=\vsplit\c@twrawtext to\c@twtopht
   \ifnum\c@twl@c=\z@%    center
-    \c@twcompoddctr{\c@twholdwin}{\c@twwindow}
-  \else% open left or righyt
-    \c@twcompoddlftrt{\c@twholdwin}{\c@twwindow}
+    \c@twcompoddctr{\c@twholdwin}{\c@twwindow}%
+  \else% open left or right
+    \c@twcompoddlftrt{\c@twholdwin}{\c@twwindow}%
   \fi
   \setbox\c@twfinaltext=
     \vbox{\ifnum\c@twtoplines>\z@\unvbox\c@twfinaltext\vskip\c@twvsilg\fi
@@ -870,9 +870,9 @@
   \fi
   \advance\c@twcnt by \c@twtoplines \advance\c@twcnt by \@ne
 %% \c@twcnt is total of toplines + 2(window lines) + 1
-  \c@twtoka={}
+  \c@twtoka={}%
   \ifnum\c@twtoplines>\z@
-    \loop\c@twtoka=\expandafter{\the\c@twtoka 0pt \hsize}
+    \loop\c@twtoka=\expandafter{\the\c@twtoka 0pt \hsize}%
       \advance\c@twtoplines -1\relax
       \ifnum\c@twtoplines>\z@\repeat
   \fi}
@@ -903,7 +903,7 @@
 %    \begin{macrocode}
 \let\c@twxpf\expandafter
 \newcommand*{\c@twbuildoddspec}[1]{%
-  \c@twtokb={}
+  \c@twtokb={}%
   \@for\c@twlspec:=#1\do{%
     \c@twxpf\c@twxpf\c@twxpf\c@twaddtospec\c@twxpf{\c@twlspec}}}
 %    \end{macrocode}
@@ -920,25 +920,25 @@
 % the first line of the cutout.
 %    \begin{macrocode}
 \newcommand*{\c@twcompoddctr}[2]{%
-  \def\c@twrounds{1}
-  \def\c@twfirst{1}
+  \def\c@twrounds{1}%
+  \def\c@twfirst{1}%
   \@for\c@twlspec:=\c@twb\do{%
     \ifnum\c@twrounds=1
       \setbox\c@twslicea=\vsplit#1 to\baselineskip % first of pair
       \c@twprune{\c@twslicea}{\c@twlspec}%
-      \def\c@twrounds{2}
+      \def\c@twrounds{2}%
     \else
       \setbox\c@twsliceb=\vsplit#1 to\baselineskip % second of pair
       \c@twprune{\c@twsliceb}{\c@twlspec}%
       \ifnum\c@twfirst=1
         \setbox#2=\vbox{\unvbox#2\hbox
         to\hsize{\box\c@twslicea\hfil\picinwindow\hfil\box\c@twsliceb}}%
-        \def\c@twfirst{2}
+        \def\c@twfirst{2}%
       \else
         \setbox#2=\vbox{\unvbox#2\hbox
         to\hsize{\box\c@twslicea\hfil\box\c@twsliceb}}%
       \fi
-      \def\c@twrounds{1}
+      \def\c@twrounds{1}%
     \fi}}
 %    \end{macrocode}
 % \end{macro}
@@ -948,7 +948,7 @@
 % Compose the open (left or right) lines of an odd shaped cutout.
 %    \begin{macrocode}
 \newcommand*{\c@twcompoddlftrt}[2]{%
-  \def\c@twfirst{1}
+  \def\c@twfirst{1}%
   \@for\c@twlspec:=\c@twb\do{%
     \setbox\c@twslicea=\vsplit#1 to\baselineskip % get a line
     \c@twprune{\c@twslicea}{\c@twlspec}%
@@ -956,7 +956,7 @@
       \ifnum\c@twfirst=1
         \setbox#2=\vbox{\unvbox#2\hbox
         to\hsize{\mbox{}\hfil\picinwindow\hfil\box\c@twslicea}}%
-        \def\c@twfirst{2}
+        \def\c@twfirst{2}%
       \else
         \setbox#2=\vbox{\unvbox#2\hbox
         to\hsize{\mbox{}\hfil\box\c@twslicea}}%
@@ -966,7 +966,7 @@
         \ifnum\c@twfirst=1
         \setbox#2=\vbox{\unvbox#2\hbox
         to\hsize{\box\c@twslicea\hfil\picinwindow\hfil}}%
-        \def\c@twfirst{2}
+        \def\c@twfirst{2}%
       \else
         \setbox#2=\vbox{\unvbox#2\hbox
         to\hsize{\box\c@twslicea\hfil}}%
