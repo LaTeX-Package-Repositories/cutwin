@@ -15,11 +15,10 @@ Changes in version 0.2 (2021/10/13)
 * Allocate package specific registers replacing \@tempdimb and \@tempdimc
 
 ------------------------------------------------------------------
-  Author: Peter Wilson (Herries Press) herries dot press at earthlink dot net
-          and Alan Hoenig
+  Author: Peter Wilson (Herries Press) and Alan Hoenig  
   Copyright 2010 Peter R. Wilson
   
-  Current Maintainer David Carlisle
+  Current Maintainer David Carlisle  
   Copyright 2021 Peter R. Wilson, David Carlisle
 
   This work may be distributed and/or modified under the
