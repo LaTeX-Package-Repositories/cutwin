@@ -10,7 +10,7 @@
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
-% version 1.3 of this license or (at your option) any 
+% version 1.3 of this license or (at your option) any
 % later version.
 % The latest version of the license is in
 %    http://www.latex-project.org/lppl.txt
@@ -111,7 +111,7 @@
 %
 % \author{%
 % Peter Wilson\thanks{Herries Press, \texttt{herries dot press at earthlink dot net}}
-% and Alan Hoenig 
+% and Alan Hoenig
 % }
 % \date{\filedate}
 % \maketitle
@@ -122,7 +122,7 @@
 % \end{abstract}
 % \tableofcontents
 %
-% 
+%
 %
 % \section{Introduction}
 %
@@ -134,8 +134,8 @@
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
 % extraction of the \LaTeX{} macro source files~\cite{COMPANION}.
 %
-%    Section~\ref{sec:usc} describes the usage of the \Lpack{cutwin} 
-% package and 
+%    Section~\ref{sec:usc} describes the usage of the \Lpack{cutwin}
+% package and
 % commented source code is in Section~\ref{sec:code}.
 %
 % \section{The \Lpack{cutwin} package} \label{sec:usc}
@@ -172,7 +172,7 @@
 %  \centering\bfseries
 %  Text \\ in \\Window \par}
 % \newcommand*{\qinwin}{%
-%   \centering\bfseries\Huge ?\, 
+%   \centering\bfseries\Huge ?\,
 %   \par}
 % \let\windowpagestuff\tinwin
 % \begin{cutout}{2}{0.2\textwidth}{0.4\textwidth}{3}
@@ -189,18 +189,18 @@
 %
 % \DescribeEnv{cutout}
 % The |cutout| environment, the body of which must be a single paragraph,
-% enables a rectangular window to be cut out of the paragraph with the 
+% enables a rectangular window to be cut out of the paragraph with the
 % text flowing across the cutout. Use as:\\
 % \verb?\begin{cutout}?\marg{numtop}\marg{leftwidth}\marg{rightwidth}\marg{numcut} \\
 % where \meta{numtop} is the number of full lines above the window
-% and \meta{numcut} is the number of lines to be cut (giving the height 
+% and \meta{numcut} is the number of lines to be cut (giving the height
 % of the window).
 % The meaning of the lengths \meta{leftwidth} and \meta{rightwidth} depend
 % on the location of the cutout:
 % \begin{itemize}
-% \item for a centered cutout \meta{leftwidth} and \meta{rightwidth} are the 
+% \item for a centered cutout \meta{leftwidth} and \meta{rightwidth} are the
 % lengths of the text lines at the left and right sides of the window;
-% \item for an open left cutout \meta{leftwidth} is ignored and 
+% \item for an open left cutout \meta{leftwidth} is ignored and
 % \meta{rightwidth} is the length of the lines to the right of the cutout; and
 % \item for an open right cutout \meta{rightwidth} is ignored and
 % \meta{leftwidth} is the length of the lines at the left of the cutout.
@@ -229,7 +229,7 @@
 % satisfaction.
 %
 % \subsection{Shaped cutouts}
-% 
+%
 % \newcommand*{\mycut}{%
 %   0.1\textwidth, 0.3\textwidth,
 %   0.2\textwidth, 0.4\textwidth,
@@ -243,27 +243,27 @@
 % bordering the cutout. Normally there is text on either side of the
 % window but it could be open at either the left or right side of
 % the paragraph. It is possible to put a logo or some text in the
-% window. In this paragraph with a shaped cutout I have used a large 
+% window. In this paragraph with a shaped cutout I have used a large
 % \$ sign as a simple logo.
 % \end{shapedcutout}
 %
 %
 % \DescribeEnv{shapedcutout}
 % The |shapedcutout| environment, the body of which must be a single paragraph,
-% enables an arbitrary shaped window to be cut out of the paragraph with the 
+% enables an arbitrary shaped window to be cut out of the paragraph with the
 % text flowing across the cutout. Use as:\\
 % \verb?\begin{shapedcutout}?\marg{numtop}\marg{numcut}\marg{shapespec}
 % where \meta{numtop} is the number of full lines above the window,
-% \meta{numcut} is the number of lines to be cut (giving the height of 
+% \meta{numcut} is the number of lines to be cut (giving the height of
 % the window) and
 % \meta{shapespec} is the specification of the length of the lines
 % bordering the cutout.
 %
-%    More precisely \meta{shapespec} is a comma-separated list of the 
-% lengths of the 
+%    More precisely \meta{shapespec} is a comma-separated list of the
+% lengths of the
 % text lines bordering the window.
 % \begin{itemize}
-% \item For a centered cutout one pair of entries are required for each cut 
+% \item For a centered cutout one pair of entries are required for each cut
 % line denoting the length of the left and right part of the cut line.
 % There must be exactly \meta{numcut} pairs.
 % \item
@@ -288,7 +288,7 @@
 % of the gap in the first line of the
 % cutout. The default \cs{picinwindow} is a zero-sized picture whose contents
 % is \cs{putstuffinpic}.
-% 
+%
 %    \cs{picinwindow} and \cs{putstuffinpic} are initially defined as
 % \begin{verbatim}
 % \newcommand*{\picinwindow}{%
@@ -296,8 +296,8 @@
 %     \putstuffinpic
 %   \end{picture}}
 % \newcommand*{\putstuffinpic}{}
-% \end{verbatim}  
-%    
+% \end{verbatim}
+%
 %    You can change \cs{putstuffinpic} to place what you want in the picture.
 % For example, to put the large \$ symbol in the shaped cutout paragraph above
 % I used:
@@ -440,7 +440,7 @@
 % \begin{macro}{\cutfuzz}
 %  An attempt to stop TeX moaning about over/under full h/v boxes.
 %    \begin{macrocode}
-\newcommand{\cutfuzz}{\vbadness=50000 
+\newcommand{\cutfuzz}{\vbadness=50000
    \hbadness=50000
 %   \hfuzz=1pt
   \sloppy}
@@ -453,7 +453,7 @@
 %    \begin{macrocode}
 \newcommand*{\c@twcalcilg}{%
   \c@twvsilg=\baselineskip
-  \setbox0=\hbox{(} 
+  \setbox0=\hbox{(}
   \advance\c@twvsilg-\ht0 \advance\c@twvsilg-\dp0}
 
 %    \end{macrocode}
@@ -465,7 +465,7 @@
 % \begin{macro}{\pageinwindow}
 % \begin{macro}{\windowpagestuff}
 % User modifiable macros for putting (\cs{pageinwindow}), via a
-% zero-sized picture, 
+% zero-sized picture,
 % stuff (\cs{windowpagestuff}) in a cutout window.
 %    \begin{macrocode}
 \newcommand*{\pageinwindow}{%
@@ -504,13 +504,13 @@
 % \verb?\begin{cutout}?\marg{numtop}\marg{leftwidth}\marg{rightwidth}\marg{numcut} \\
 % where \meta{numtop} is the number of full lines above the window,
 % \meta{leftwidth} and \meta{rightwidth} are the widths of the text
-% at the sides of the window, 
-% and \meta{numcut} is the number of lines to be cut (giving the height 
+% at the sides of the window,
+% and \meta{numcut} is the number of lines to be cut (giving the height
 % of the window).
 %
 %    The basic method is to split the paragraph into three parts (a)
-% the top lines above the window, (b) the window lines and (c) the rest 
-% (which will be below the window).  \cs{parshape} is used to do the 
+% the top lines above the window, (b) the window lines and (c) the rest
+% (which will be below the window).  \cs{parshape} is used to do the
 % splitting. The top lines are left at their natural length, each line
 % crossing the window is treated as a pair of short lines, and the rest
 % are left at their natural length.
@@ -538,7 +538,7 @@
   \c@twwinlines=#4\relax
   \c@twcalcshift \vskip-\c@twvsilg
 %    \end{macrocode}
-% Open the \cs{c@twrawtext} box, call the \cs{parshape} and start 
+% Open the \cs{c@twrawtext} box, call the \cs{parshape} and start
 % collecting the text to be windowed.
 %    \begin{macrocode}
   \setbox\c@twrawtext=\vbox\bgroup
@@ -549,12 +549,12 @@
 % the interline glue.
 %    \begin{macrocode}
   {\egroup% end \box\c@twrawtext
-  \parshape=0 % reset parshape; 
+  \parshape=0 % reset parshape;
   \c@twcalcilg % find ILG using current font
 %    \end{macrocode}
 % If there are lines above the window, split them off from \cs{c@twrawtext}
 % into \cs{c@twfinaltext}.
-%    \begin{macrocode}    
+%    \begin{macrocode}
   \ifnum\c@twtoplines>\z@
     \setbox\c@twfinaltext=\vsplit\c@twrawtext to\c@twtoplines\baselineskip
   \fi
@@ -575,9 +575,9 @@
 %    \begin{macrocode}
   \setbox\c@twholdwin=\vsplit\c@twrawtext to\c@twtopht
 %    \end{macrocode}
-% Now `compose' the window side(s) text (\cs{c@twholdwin}) 
+% Now `compose' the window side(s) text (\cs{c@twholdwin})
 % into the final set of windowed lines (\cs{c@twwindow}).
-% The process depends on whether the cutout is at the left, right, or center. 
+% The process depends on whether the cutout is at the left, right, or center.
 %    \begin{macrocode}
   \ifnum\c@twl@c=\z@% center
     \c@twcompctr{\c@twholdwin}{\c@twwindow}
@@ -585,7 +585,7 @@
     \c@twcomplftrt{\c@twholdwin}{\c@twwindow}
   \fi
 %    \end{macrocode}
-% Assemble the various boxes into the final box (\cs{c@twfinaltext}) 
+% Assemble the various boxes into the final box (\cs{c@twfinaltext})
 % to be output.
 %    \begin{macrocode}
   \setbox\c@twfinaltext=
@@ -602,7 +602,7 @@
 %
 % \begin{macro}{\c@twcompctr}
 % \begin{macro}{\c@twfirst}
-%  \cs{c@twcompctr}\marg{linepairbox}\marg{composedbox} composes a 
+%  \cs{c@twcompctr}\marg{linepairbox}\marg{composedbox} composes a
 % center window box \meta{linepairbox} consisting of pairs of short
 % lines into a box \meta{composedbox} where the pairs have been assembled
 % into single lines.
@@ -652,7 +652,7 @@
   \loop\advance\c@twwinlines\m@ne
 %    \end{macrocode}
 % For an open window we simply deal with one line at a time, not
-% pairs. In other respects the code is generally similar to that for 
+% pairs. In other respects the code is generally similar to that for
 % \cs{c@twcompctr}.
 %    \begin{macrocode}
   \setbox\c@twslicea=\vsplit#1 to\baselineskip
@@ -708,7 +708,7 @@
 % the number of the top lines plus (twice) the number of window line
 % plus one for the remaining lines.
 %    \begin{macrocode}
-  \c@twcnt=\c@twwinlines 
+  \c@twcnt=\c@twwinlines
   \ifnum\c@twl@c=\z@
     \multiply \c@twcnt by \tw@
   \fi
@@ -739,13 +739,13 @@
 %    \end{macrocode}
 % For open left generate a \verb?\c@twlftside \c@twrtside? for each.
 %    \begin{macrocode}
-      \expandafter{\the\c@twtoka \c@twlftside \c@twrtside} 
+      \expandafter{\the\c@twtoka \c@twlftside \c@twrtside}
     \else
       \ifnum\c@twl@c=\@ne % openright
 %    \end{macrocode}
 % For open right generate a \verb?\0pt c@twlftside? for each
 %    \begin{macrocode}
-        \expandafter{\the\c@twtoka 0pt \c@twlftside} 
+        \expandafter{\the\c@twtoka 0pt \c@twlftside}
       \else %center
 %    \end{macrocode}
 % For centered generate \verb?0pt \c@twlftside 0pt \c@twrtside? for each pair.
@@ -809,9 +809,9 @@
 % A shaped cutout where the user defines the shape. \\
 % \verb?\begin{shapedcutout}?\marg{numtop}\marg{numcut}\marg{shapespec} \\
 % where \meta{numtop} is the number of full lines above the window,
-% \meta{numcut} is the number of lines to be cut (giving the height 
+% \meta{numcut} is the number of lines to be cut (giving the height
 % of the window) and
-% \meta{shapespec} is the user's specification of the shape of the 
+% \meta{shapespec} is the user's specification of the shape of the
 % surroundings of the cutout. This is in the form of a comma-separated
 % list of either the pairs of widths of the left and right texts of a centered
 % cutout or the widths of the left or right texts of an open cutout.
@@ -875,11 +875,11 @@
 % \end{environment}
 %
 % \begin{macro}{\c@twmaketopoddspec}
-%  Make up the easy part of the odd \cs{parshape} specification; 
+%  Make up the easy part of the odd \cs{parshape} specification;
 % total number \cs{c@twcnt} and the toplines spec (\cs{c@twtoka}).
 %    \begin{macrocode}
 \newcommand*{\c@twmaketopoddspec}{%
-  \c@twcnt=\c@twwinlines 
+  \c@twcnt=\c@twwinlines
   \ifnum\c@twl@c=\z@
     \multiply \c@twcnt by \tw@
   \fi
@@ -896,7 +896,7 @@
 % \end{macro}
 %
 % \begin{macro}{\c@twaddtospec}
-% Adds a `zero-indented line' to a parshape spec being assembled in 
+% Adds a `zero-indented line' to a parshape spec being assembled in
 % \cs{c@twtokb}.
 %    \begin{macrocode}
 \newcommand*{\c@twaddtospec}[1]{%
@@ -905,14 +905,14 @@
 % \end{macro}
 % \begin{macro}{\c@twbuildoddspec}
 % \begin{macro}{\c@twxpf}
-% \cs{c@twbuildoddspec}\marg{commalist} builds up the parshape spec for 
+% \cs{c@twbuildoddspec}\marg{commalist} builds up the parshape spec for
 % the odd cutout lines from the comma-separated list of lengths
 % in \meta{commalist}.
 %
 % \cs{c@twxpf} is a shorthand for \cs{expandafter}
 % to try and make the code shorter to read.
 % \begin{macro}{\c@twlspec}
-% \cs{c@twlspec} is used as a temporary variable when iterating over 
+% \cs{c@twlspec} is used as a temporary variable when iterating over
 % a comma-separated list.
 % \end{macro}
 %
@@ -930,7 +930,7 @@
 % \begin{macro}{\c@twcompoddctr}
 % \begin{macro}{\c@twrounds}
 % Compose the lines of an odd shaped center cutout.
-% 
+%
 % We go through the user's shape list an item at a time but we need to
 % collect pairs of items. The \cs{c@twrounds} variable is for managing the
 % pairing. \cs{c@twfirst} is a flag for positioning the \cs{picinwindow} in
