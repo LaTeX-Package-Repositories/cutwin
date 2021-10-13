@@ -31,12 +31,15 @@ o Allocate package specific registers replacing \@tempdimb and \@tempdimc
 
   This work has the LPPL maintenance status "author-maintained".
 
-  This work consists of the files:
-    README (this file)
-    cutwin.dtx
-    cutwin.ins
-    cutwin.pdf
-  and the derived files
+This work consists of the files:
+
+    README (this file)  
+    cutwin.dtx  
+    cutwin.ins  
+    cutwin.pdf  
+	
+and the derived file
+
     cutwin.sty
 
 ------------------------------------------------------------------
@@ -49,17 +52,18 @@ cutwin.ins
 cutwin.pdf
 
 
-    To install the package:
-o run: latex cutwin.ins (which will generate cutwin.sty)
-o Move cutwin.sty to a location where LaTeX will find it,
+##    To install the package:
+
+* run: latex cutwin.ins (which will generate cutwin.sty)
+*  Move cutwin.sty to a location where LaTeX will find it,
   for example /usr/TeX/texmf-local/tex/latex/cutwin/cutwin.sty
   (for more information on installation see the FAQ).
 
-    To generate a second copy of the manual (which is already supplied as a PDF file):
-o run: (pdf)latex cutwin.dtx
-o (for an index run: makeindex -s gind.ist cutwin.idx)
-o run: (pdf)latex cutwin.dtx
-o Print cutwin.dvi (or cutwin.pdf) for a hardcopy of the package manual
+##   To generate a second copy of the manual
+* run: (pdf)latex cutwin.dtx
+* (for an index run: makeindex -s gind.ist cutwin.idx)
+* run: (pdf)latex cutwin.dtx
+* Print cutwin.dvi (or cutwin.pdf) for a hardcopy of the package manual
 
 
 
