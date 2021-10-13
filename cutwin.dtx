@@ -350,7 +350,6 @@
 \newcount\c@twwinlines % window lines
 \newcount\c@twtoplines % top lines
 \newcount\c@twcnt      % a count
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -366,7 +365,6 @@
 \newdimen\c@twrtside   % right width
 \newdimen\c@twtopht    % height of top text
 \newdimen\c@twvsilg    % Vertical Shift or InterLine Glue
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -379,7 +377,6 @@
 %    \begin{macrocode}
 \newtoks\c@twtoka      % build of parshape spec
 \newtoks\c@twtokb      % build of parshape spec
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -434,7 +431,6 @@
 % \end{macro}
 %    \begin{macrocode}
 \opencutcenter
-
 %    \end{macrocode}
 %
 % \begin{macro}{\cutfuzz}
@@ -444,7 +440,6 @@
    \hbadness=50000
 %   \hfuzz=1pt
   \sloppy}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -455,7 +450,6 @@
   \c@twvsilg=\baselineskip
   \setbox0=\hbox{(}
   \advance\c@twvsilg-\ht0 \advance\c@twvsilg-\dp0}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -493,7 +487,6 @@
     }% end put
   \end{picture}}
 \newcommand*{\windowpagestuff}{}
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -596,7 +589,6 @@
 % We're done, hand off the paragraph.
 %    \begin{macrocode}
   \box\c@twfinaltext}
-
 %    \end{macrocode}
 % \end{environment}
 %
@@ -639,7 +631,6 @@
 %    \begin{macrocode}
   \def\c@twfirst{2}
   \ifnum\c@twwinlines>\z@\repeat}
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -680,7 +671,6 @@
     \fi
   \fi
   \ifnum\c@twwinlines>\z@\repeat}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -694,7 +684,6 @@
 \newcommand*{\c@twprune}[2]{%
   \unvbox#1 \setbox#1=\lastbox % \box#1 is now an \hbox
   \setbox#1=\hbox to#2{\strut\unhbox#1\unskip}}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -760,7 +749,6 @@
 % paragraph just generate a single \verb?0pt \hsize?.
 %    \begin{macrocode}
   \c@twtoka=\expandafter{\the\c@twtoka 0pt \hsize}}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -778,7 +766,6 @@
   \ifnum\c@twl@c=\z@\else
     \c@twvsilg=0.5\c@twvsilg
   \fi}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -800,7 +787,6 @@
 % Default \cs{putstuffinpic} is empty.
 %    \begin{macrocode}
 \newcommand*{\putstuffinpic}{}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -870,7 +856,6 @@
     \unvbox\c@twwindow%
     \vskip-\c@twvsilg\unvbox\c@twrawtext}%
   \box\c@twfinaltext}
-
 %    \end{macrocode}
 % \end{environment}
 %
@@ -891,7 +876,6 @@
       \advance\c@twtoplines -1\relax
       \ifnum\c@twtoplines>\z@\repeat
   \fi}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -922,7 +906,6 @@
   \c@twtokb={}
   \@for\c@twlspec:=#1\do{%
     \c@twxpf\c@twxpf\c@twxpf\c@twaddtospec\c@twxpf{\c@twlspec}}}
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -957,7 +940,6 @@
       \fi
       \def\c@twrounds{1}
     \fi}}
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -991,7 +973,6 @@
       \fi
     \fi
   \fi}}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1010,21 +991,4 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
 
