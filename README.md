@@ -4,7 +4,7 @@ The cutwin package enables you to create a window in a paragraph.
 Facilities are provided to assist in putting text or a logo into the
 space cutout.
 
-https://github.com/davidcarlisle/cutwin/issues
+https://github.com/latex-package-repositories/cutwin/issues
 
 Changes in version 0.1 (2010/09/29)
 
@@ -30,7 +30,7 @@ Changes in version 0.2 (2021/10/13)
   and version 1.3 or later is part of all distributions of
   LaTeX version 2003/06/01 or later.
 
-  This work has the LPPL maintenance status "author-maintained".
+  This work has the LPPL maintenance status "maintained".
 
 This work consists of the files:
 
